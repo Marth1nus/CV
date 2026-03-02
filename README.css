@@ -1,0 +1,58 @@
+main#cv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25em;
+  margin: auto;
+}
+section#qr {
+  display: block;
+  padding-top: 3em;
+  & svg {
+    width: max(2cm, 8em);
+  }
+  & a {
+    color: inherit;
+  }
+  & ul {
+    display: grid;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+  }
+  & li {
+    text-align: center;
+    border-top: 1px outset currentColor;
+    border-radius: 0.3em;
+  }
+}
+section#projects {
+  grid-area: 2 / 1 / span 2 / span 1;
+  & > h3 {
+    font-size: medium;
+  }
+}
+section#education {
+  grid-column: span 2;
+}
+@media (max-width: 600px) {
+  main#cv {
+    grid-template-columns: 1fr;
+  }
+  section#projects {
+    grid-area: auto / auto / span 1 / span 1;
+  }
+  section#education {
+    grid-column: span 1;
+  }
+  section#qr {
+    display: none;
+  }
+}
+@media print {
+  section {
+    break-inside: avoid;
+  }
+  section#qr {
+    display: block;
+  }
+}
