@@ -81,7 +81,7 @@ section#projects {
 section#education {
   grid-column: span 2;
 }
-@media (max-width: 20cm) {
+@media (max-width: 600px) {
   main#cv {
     grid-template-columns: 1fr;
   }
